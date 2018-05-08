@@ -1,1 +1,10 @@
-
+def husz_oszto():
+    x=20    ##20tól indítom, mert az a legkisebb szám, ami osztható 20-szal
+    while True:    # Folyamatos ciklust szerettem volna.
+        if x%19==0 and x%18==0 and x%17==0 and x%16==0 and x%15==0 and x%14==0 and x%13==0 and x%12==0 and x%11==0:
+            ### Ha osztva a számokkal 0 a maradék akkor a szám osztható az adott számmal.
+            ### 10*2=20   9*2=18 8*2=16 7*2=14 6*2=12  5*4=20  4*4=16  3*4=12  2páros, 1-gyel osztható.
+            return x  # Hagyja abba a ciklust és adja vissza az értéket ha igaz.
+        else:     #Ha nem akkor növeljük 20-szal, ezzel ki lehet kerülni az egyesével történő növelést.
+            x+=20
+print(husz_oszto())
