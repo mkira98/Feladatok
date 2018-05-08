@@ -10,3 +10,25 @@ def morsekodos(szoveg):
               
             ".": ".-.-.-", ",": "--..--", ":": "---...", "?": "..--..", "'": ".----.",
             "-": "-....-", "/": "-..-.", "@": ".--.-.","=": "-...-", '(':'-.--.', ')':'-.--.-', ' ':' '}
+            
+            
+    forditott = ''                             #Létrehozok egy új sztringet, amibe a fordításomat fogom tárolni
+    if szoveg[0] == '.' or szoveg[0] == '-':   #Megvizsgálom, hogy Morse kód-e 1. karakter alapján. Ha morse kód:
+        for i in szoveg.split(' '):            #Szétdarabolom a szöveget a szóközök mentén
+            for a, b in szotar.items():        # Keresem a-t és b-t a szótár elemei között.
+                if i == b:                     # Ha az adott karakter megegyezik a morse kóddal
+                    forditott += a             # Hozzáadom az új sztringhez a hozzá tartozó betűt/számot/írásjelet.
+    else:                                      #Ha nem Morse kód
+        szoveg = szoveg.upper()                # A megkapott szöveget nagybetűsítem, mivel a szótáram nagybetűkkel dolgozik
+        for i in szoveg:                       #Végigmegyek mindegyik karakteren
+            for a, b in szotar.items():        #a-t és b-t keresem a szótár elemei között.
+                if i == a:                     # Megvizsgálom, hogy az adott karakter megegyezik e a szótár adott karakterével
+                    forditott += b             # És ha igen akkor beszúrom a hozzá tartozó morse kódot
+                    forditott += ' '           # majd egy szóközt.
+    return forditott                           #Visszaadom az új sztringet
+
+
+peldakod = '... .. -.- . .-. ..- .-.. - '
+peldaszoveg = 'Sikerult'
+print(morsekodos(peldakod))
+print(morsekodos(peldaszoveg))
