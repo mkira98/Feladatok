@@ -1,1 +1,18 @@
-def legyen100()
+def legyen100():
+    megoldas= ""                                             # A megoldásokat egy üres sztringben fogom gyűjteni.
+    x=['','+','-']                                           # A műveleti jeleket felveszem egy listába.
+    for a in range(len(x)):                                  # Elindítok 8 for ciklust. 8-at mivel a számok között annyi 'hely' lehetséges.
+        for b in range(len(x)):                              # És mindegyiken menjen végig a 3 műveleti jel, vagyis a listám hossza. 
+            for c in range(len(x)):
+                for d in range(len(x)):
+                    for e in range(len(x)):
+                        for f in range(len(x)):
+                            for g in range(len(x)):
+                                for h in range(len(x)):                 #Az összes variációt adja vissza,köztük az összes műveleti jellel.
+                                    szamok='1{}2{}3{}4{}5{}6{}7{}8{}9'.format(x[a],x[b],x[c],x[d],x[e],x[f],x[g],x[h])
+                                    if eval(szamok)==100:               #Vizsgálja meg, hogy ezek összege = 100-zal.
+                                        megoldas += szamok+'=100' '\n'  #Ha igen fűzze hozzá az üres sztringemhez.
+                                                                        #formázom egy '=100' résszel, majd a következőt új sorba íratom.
+    return megoldas                                                     #visszaadatom a megoldást.
+
+print(legyen100())                                                      # tesztelek
